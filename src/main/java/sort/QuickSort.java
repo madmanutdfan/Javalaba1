@@ -1,8 +1,10 @@
+package sort;
+
 /**
  * Created by User on 22.05.2017.
  */
-public class QuickSort implements Sort{
-    public  <T extends Comparable<T>> void sort(final T[] array) {
+public class QuickSort implements Sort {
+    public  <T extends Comparable<T>> void toSort(final T[] array) {
 
         if (array == null || array.length == 0) {
             return;
@@ -14,7 +16,7 @@ public class QuickSort implements Sort{
 
         int i = lowerIndex;
         int j = higherIndex;
-        T pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+        T pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2];
         while (i <= j) {
             while (array[i].compareTo(pivot) < 0) {
                 i++;

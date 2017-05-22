@@ -1,16 +1,17 @@
-/**
+package test; /**
  * Created by User on 22.05.2017.
  */
+import sort.Sort;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 /**
  * Created by User on 23.04.2017.
  */
-public class TestSort {
+public class SortTest {
     public Sort thisSort;
 
-    public TestSort(Sort currentSort) {
+    public SortTest(Sort currentSort) {
         thisSort = currentSort;
     }
 
@@ -52,58 +53,58 @@ public class TestSort {
     }
 
     @Test
-    public void test1() {
+    public void testChars() {
         String arr1Test[] = {"t", "c", "a", "z", "b", "d"};
         String arr[] = arr1Test.clone();
-        thisSort.sort(arr);
+        thisSort.toSort(arr);
         assertEquals(true, isItSorted(arr));
         assertEquals(true, isItSame(arr1Test, arr));
     }
 
     @Test
-    public void test2() {
+    public void testInt1() {
         Integer arr1Test[] = {9, 5, 2, 7, 1, 8, 4, 6, 0, 3};
         Integer arr[] = arr1Test.clone();
-        thisSort.sort(arr);
+        thisSort.toSort(arr);
         assertEquals(true, isItSorted(arr));
         assertEquals(true, isItSame(arr1Test, arr));
     }
 
     @Test
-    public void test3() {
+    public void testInt2() {
+        Integer arr1Test[] = {-1, -39, -98, 77, 0};
+        Integer arr[] = arr1Test.clone();
+        thisSort.toSort(arr);
+        assertEquals(true, isItSorted(arr));
+        assertEquals(true, isItSame(arr1Test, arr));
+    }
+
+    @Test
+    public void testEmpty() {
         Integer arr1Test[] = {};
         Integer arr[] = arr1Test.clone();
-        thisSort.sort(arr);
+        thisSort.toSort(arr);
         assertEquals(true, isItSorted(arr));
         assertEquals(true, isItSame(arr1Test, arr));
     }
 
     @Test
-    public void test4() {
+    public void testSingleElement() {
         Double arr1Test[] = {0.};
         Double arr[] = arr1Test.clone();
-        thisSort.sort(arr);
+        thisSort.toSort(arr);
         assertEquals(true, isItSorted(arr));
         assertEquals(true, isItSame(arr1Test, arr));
     }
 
     @Test
-    public void test5() {
+    public void testHugeArray() {
         int size = 10000;
         Double[] arr1Test = new Double[size];
         for (int i = 0; i < size; i++)
             arr1Test[i] = Math.random() * 11 + 1;
         Double arr[] = arr1Test.clone();
-        thisSort.sort(arr);
-        assertEquals(true, isItSorted(arr));
-        assertEquals(true, isItSame(arr1Test, arr));
-    }
-
-    @Test
-    public void test6() {
-        Integer arr1Test[] = {-1, -39, -98, 77, 0};
-        Integer arr[] = arr1Test.clone();
-        thisSort.sort(arr);
+        thisSort.toSort(arr);
         assertEquals(true, isItSorted(arr));
         assertEquals(true, isItSame(arr1Test, arr));
     }
