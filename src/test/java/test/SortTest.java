@@ -1,23 +1,19 @@
-package test; /**
- * Created by User on 22.05.2017.
- */
+package test;
 
 import org.junit.Test;
 import sort.Sort;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by User on 23.04.2017.
- */
+
 public class SortTest {
-    public Sort thisSort;
+    private final Sort thisSort;
 
     public SortTest(Sort currentSort) {
         thisSort = currentSort;
     }
 
-    public <T extends Comparable<T>> boolean isItSorted(T[] inputArr) {
+    private <T extends Comparable<T>> boolean isItSorted(T[] inputArr) {
         boolean sortStatement = true;
         for (int i = 0; i < inputArr.length - 1; i++)
             if (inputArr[i].compareTo(inputArr[i + 1]) > 0) {
@@ -27,21 +23,21 @@ public class SortTest {
         return sortStatement;
     }
 
-    public <T extends Comparable<T>> boolean isItSame(T[] inputArr1, T[] inputArr2) {
+    private <T extends Comparable<T>> boolean isItSame(T[] inputArr1, T[] inputArr2) {
         boolean sameStatement = true;
         if (inputArr1.length != inputArr2.length) {
             sameStatement = false;
         } else {
-            int i = 0, j = 0, arrLength = inputArr1.length;
+            int i = 0, j, arrLength = inputArr1.length;
             T trifle;
             boolean isItOnce[] = new boolean[arrLength];
             for (j = 0; j < arrLength; j++)
                 isItOnce[j] = false;
-            while ((i < arrLength) && (sameStatement == true)) {
+            while ((i < arrLength) && (sameStatement)) {
                 trifle = inputArr1[i];
                 sameStatement = false;
                 for (j = 0; j < arrLength; j++) {
-                    if ((inputArr2[j] == trifle) && (isItOnce[j] == false)) {
+                    if ((inputArr2[j] == trifle) && (!isItOnce[j])) {
                         sameStatement = true;
                         isItOnce[j] = true;
                         break;

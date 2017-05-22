@@ -1,8 +1,5 @@
 package sort;
 
-/**
- * Created by User on 22.05.2017.
- */
 public class QuickSort implements Sort {
     public <T extends Comparable<T>> void toSort(final T[] array) {
 

@@ -1,8 +1,6 @@
 package sort;
 
-/**
- * Created by User on 22.05.2017.
- */
+
 public class SelectionSort implements Sort {
     public <T extends Comparable<T>> void toSort(final T[] array) {
         for (int min = 0; min < array.length - 1; min++) {
