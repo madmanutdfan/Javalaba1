@@ -4,7 +4,7 @@ package sort;
  * Created by User on 22.05.2017.
  */
 public class QuickSort implements Sort {
-    public  <T extends Comparable<T>> void toSort(final T[] array) {
+    public <T extends Comparable<T>> void toSort(final T[] array) {
 
         if (array == null || array.length == 0) {
             return;
@@ -12,7 +12,7 @@ public class QuickSort implements Sort {
         quickSort(0, array.length - 1, array);
     }
 
-    private <T extends Comparable<T>> void quickSort(int lowerIndex, int higherIndex,final T[] array ){
+    private <T extends Comparable<T>> void quickSort(int lowerIndex, int higherIndex, final T[] array) {
 
         int i = lowerIndex;
         int j = higherIndex;

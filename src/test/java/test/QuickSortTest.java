@@ -1,5 +1,7 @@
 package test;
+
 import sort.QuickSort;
+
 /**
  * Created by User on 22.05.2017.
  */

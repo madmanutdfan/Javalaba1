@@ -1,10 +1,12 @@
 package test; /**
  * Created by User on 22.05.2017.
  */
-import sort.Sort;
+
 import org.junit.Test;
+import sort.Sort;
 
 import static org.junit.Assert.assertEquals;
+
 /**
  * Created by User on 23.04.2017.
  */
